@@ -1,0 +1,28 @@
+<% provide(:title, "Наборы") %>
+<h1>Listing cmps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>sys name</th>
+      <th>room </th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cmps.each do |cmp| %>
+      <tr>
+        <td><%= cmp.sys_name %></td>
+        <td><%= cmp.cmp_room %></td>
+        <td><%= link_to 'Show', cmp %></td>
+        <td><%= link_to 'Edit', edit_cmp_path(cmp) %></td>
+        <td><%= link_to 'Destroy', cmp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cmp', new_cmp_path %>

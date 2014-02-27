@@ -1,0 +1,18 @@
+<%= simple_form_for(@cmp, :html => {:class => 'form-vertical' } ) do |f| %>
+    <%= render 'fields', f: f %>
+    <% if @cmp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cmp.errors.count, "error") %> prohibited this cmp from being saved:</h2>
+
+      <ul>
+      <% @cmp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
